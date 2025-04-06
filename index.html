@@ -1,107 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For Shravi</title>
+  <meta charset="UTF-8">
+  <title>For My Love Shravi</title>
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-    body {
-      background: white;
+      font-family: 'Arial', sans-serif;
+      background-color: white;
       color: black;
-      font-weight: bold;
+      overflow: hidden;
     }
+
     .page {
       display: none;
-      height: 100vh;
-      width: 100vw;
       padding: 40px 20px;
-      flex-direction: column;
-      align-items: center;
+      height: 100vh;
+      box-sizing: border-box;
       justify-content: center;
-      text-align: center;
-      transition: opacity 0.5s ease-in-out;
+      align-items: center;
+      flex-direction: column;
     }
+
     .page.active {
       display: flex;
-      opacity: 1;
+      animation: fade 1s ease-in-out;
     }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     img {
-      max-width: 90%;
-      max-height: 300px;
-      border: 5px solid black;
+      width: 280px;
+      height: auto;
+      object-fit: cover;
       border-radius: 20px;
+      border: 2px solid #000;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
       margin-bottom: 20px;
+      cursor: pointer;
     }
+
     .btn {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: black;
+      background: #ff4d6d;
       color: white;
       border: none;
+      padding: 10px 20px;
+      font-size: 18px;
       border-radius: 10px;
       cursor: pointer;
-      font-size: 16px;
+      transition: 0.3s;
     }
+
     .btn:hover {
-      background: #333;
+      background: #e04361;
     }
-    audio {
-      display: none;
+
+    .typewriter {
+      font-weight: bold;
+      font-size: 20px;
+      max-width: 80%;
+      text-align: center;
+    }
+
+    /* Heart rain */
+    .heart {
+      position: fixed;
+      top: -50px;
+      color: red;
+      animation: fall 6s linear infinite;
+      font-size: 20px;
+      opacity: 0.7;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+      }
     }
   </style>
 </head>
 <body>
 
-<audio autoplay loop>
+<!-- Background music -->
+<audio id="bgMusic" autoplay loop>
   <source src="https://raw.githubusercontent.com/kakashuuu/Html/master/y2mate.com%20-%20Darling%20in%20the%20franxx%20edit%20_%20Zero%20two%20x%20Hiro.mp3" type="audio/mpeg">
 </audio>
 
+<!-- Pages -->
 <div class="page active">
-  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/34ea7db04bf4c8eb51e511c0d16f3f35.jpg" alt="Zero Two">
-  <p>Mujhe tumse ek baat kehni hai 🥺❤️<br/>I love you Mommy Shravi 💌</p>
+  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/34ea7db04bf4c8eb51e511c0d16f3f35.jpg" onclick="showMessage('Shravi, tum meri duniya ho!')">
+  <div class="typewriter" id="text1"></div>
+  <br>
   <button class="btn" onclick="nextPage()">Next</button>
 </div>
 
 <div class="page">
-  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/fb6402763b9bf6dc59f4793f3b8f2d73.jpg" alt="Love">
-  <p>Tum meri duniya ho 🌍<br/>Main hamesha tumhara Hiro kun rahunga ❤️</p>
+  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/fb6402763b9bf6dc59f4793f3b8f2d73.jpg" onclick="showMessage('Tumhara muskurana meri jaan ban gaya hai!')">
+  <p style="font-weight: bold;">Tumhari aankhon mein meri duniya basa chuki hai</p>
   <button class="btn" onclick="nextPage()">Next</button>
 </div>
 
 <div class="page">
-  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/f77eb6c10af3b05f99fa71fa1793b5d6.jpg" alt="Together">
-  <p>Jab bhi tum muskurati ho, mera dil khush ho jata hai 🥹💖<br/>Tum mere liye sab kuch ho Mommy 💘</p>
+  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/f77eb6c10af3b05f99fa71fa1793b5d6.jpg" onclick="showMessage('I love you so much mommy!')">
+  <p style="font-weight: bold;">Tum mere Hiro ke Zero Two ho</p>
   <button class="btn" onclick="nextPage()">Next</button>
 </div>
 
 <div class="page">
-  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/49b4748c19ade54f9ebbe09f37c7decf.jpg" alt="Love Forever">
-  <p>Jab tak saansein chalti rahengi, main tumse pyaar karta rahunga ❤️‍🔥<br/>I love you endlessly my Shravi 💞</p>
+  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/49b4748c19ade54f9ebbe09f37c7decf.jpg" onclick="showMessage('Tumse pyar karna meri zindagi ka sabse khoobsurat hissa hai!')">
+  <p style="font-weight: bold;">Har pal, har saans tumhare naam</p>
   <button class="btn" onclick="nextPage()">Next</button>
 </div>
 
 <div class="page">
-  <h1 style="font-size: 40px;">Shravi × Ayanokouji 💖</h1>
-  <p style="margin-top: 20px;">Hamesha saath rahenge — Hiro kun & Mommy ❤️</p>
+  <h1 style="font-size: 32px;">Shravi X Ayanokouji</h1>
+  <p style="font-size: 18px;">Forever & Always</p>
+  <button class="btn" onclick="showMessage('Mujhe tumse ek baat kehni hai... I love you mommy!')">Mommy</button>
 </div>
 
+<!-- JS -->
 <script>
-  let currentPage = 0;
   const pages = document.querySelectorAll(".page");
+  let currentPage = 0;
+  const music = document.getElementById("bgMusic");
 
   function nextPage() {
-    if (currentPage < pages.length - 1) {
-      pages[currentPage].classList.remove("active");
-      currentPage++;
-      pages[currentPage].classList.add("active");
+    pages[currentPage].classList.remove("active");
+    currentPage = (currentPage + 1) % pages.length;
+    pages[currentPage].classList.add("active");
+    music.play().catch(()=>{}); // Force play on click
+  }
+
+  function showMessage(msg) {
+    alert(msg);
+    music.play().catch(()=>{}); // Play music if blocked
+  }
+
+  // Typewriter effect
+  const text = "Mujhe tumse ek baat kehni hai... I love you mommy!";
+  let i = 0;
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById("text1").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 70);
     }
   }
+  typeWriter();
+
+  // Heart rain generator
+  function createHearts() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 15 + 15 + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }
+  setInterval(createHearts, 500);
 </script>
 
 </body>
