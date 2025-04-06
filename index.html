@@ -3,33 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>I Love You Mommy Shravi</title>
+  <title>For My Shravi</title>
   <style>
     body {
       margin: 0;
       padding: 0;
+      font-family: 'Poppins', sans-serif;
       background-image: url('https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/34ea7db04bf4c8eb51e511c0d16f3f35.jpg');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      height: 100vh;
-      font-family: 'Arial', sans-serif;
-      font-weight: bold;
+      background-attachment: fixed;
       color: white;
-      text-shadow: 2px 2px 4px #000;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      overflow-x: hidden;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+
+    .content {
+      text-align: center;
+      padding: 60px 20px 20px;
     }
 
     h1 {
-      font-size: 3em;
+      font-size: 2.8em;
       margin-bottom: 20px;
-      text-align: center;
+      font-weight: bold;
+    }
+
+    .typewriter {
+      display: inline-block;
+      font-size: 1.3em;
+      border-right: 2px solid white;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards, blink .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
     }
 
     .images {
+      margin-top: 30px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -40,7 +69,7 @@
       width: 200px;
       height: auto;
       border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
       transition: transform 0.3s ease;
     }
 
@@ -48,31 +77,123 @@
       transform: scale(1.05);
     }
 
-    audio {
-      display: none;
+    .quote {
+      margin-top: 40px;
+      font-size: 1.4em;
+      font-style: italic;
+      animation: glow 2s infinite alternate;
     }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff7de9, 0 0 20px #ff99ec;
+      }
+      to {
+        text-shadow: 0 0 20px #ffc4f5, 0 0 30px #ffe3f8;
+      }
+    }
+
+    .heart-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff69b4;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff69b4;
+      z-index: 10;
+      transition: transform 0.2s ease;
+    }
+
+    .heart-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      background: white;
+      color: black;
+      padding: 15px 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #ff69b4;
+      font-weight: bold;
+    }
+
+    /* Falling hearts */
+    .heart {
+      position: fixed;
+      top: -10px;
+      width: 20px;
+      height: 20px;
+      background: url('https://i.imgur.com/5Yzj0xN.png') no-repeat center center;
+      background-size: contain;
+      animation: fall 8s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
   </style>
 </head>
 <body>
-  <h1>I Love You Mommy Shravi</h1>
+  <div class="overlay"></div>
 
-  <div class="images">
-    <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/fb6402763b9bf6dc59f4793f3b8f2d73.jpg" alt="Zero Two 1">
-    <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/f77eb6c10af3b05f99fa71fa1793b5d6.jpg" alt="Zero Two 2">
-    <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/49b4748c19ade54f9ebbe09f37c7decf.jpg" alt="Zero Two 3">
+  <div class="content">
+    <h1>For My Shravi</h1>
+    <div class="typewriter">I love you mommy - Hiro kun</div>
+
+    <div class="quote">"In a world full of Zero Twos, you're my only Hiro..."</div>
+
+    <div class="images">
+      <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/fb6402763b9bf6dc59f4793f3b8f2d73.jpg" alt="zero two 1"/>
+      <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/f77eb6c10af3b05f99fa71fa1793b5d6.jpg" alt="zero two 2"/>
+      <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/49b4748c19ade54f9ebbe09f37c7decf.jpg" alt="zero two 3"/>
+    </div>
   </div>
 
-  <audio id="bg-music" autoplay loop>
-    <source src="https://raw.githubusercontent.com/kakashuuu/Html/master/y2mate.com%20-%20Darling%20in%20the%20franxx%20edit%20_%20Zero%20two%20x%20Hiro.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
+  <button class="heart-btn" onclick="showLove()">❤️</button>
+  <div class="popup" id="popupMsg">You mean everything to me, Shravi!</div>
+
+  <!-- Music -->
+  <audio autoplay loop>
+    <source src="https://raw.githubusercontent.com/kakashuuu/Html/master/y2mate.com%20-%20Darling%20in%20the%20franxx%20edit%20_%20Zero%20two%20x%20Hiro.mp3" type="audio/mpeg">
   </audio>
 
+  <!-- Hearts animation script -->
   <script>
-    // To ensure autoplay works after user interaction
-    document.body.addEventListener('click', () => {
-      const music = document.getElementById("bg-music");
-      if (music.paused) music.play();
-    });
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 5) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }
+
+    setInterval(createHeart, 300);
+
+    function showLove() {
+      const popup = document.getElementById("popupMsg");
+      popup.style.display = "block";
+      setTimeout(() => popup.style.display = "none", 3000);
+    }
   </script>
 </body>
 </html>
