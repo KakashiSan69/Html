@@ -3,197 +3,169 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For My Shravi</title>
+  <title>I Love You Shravi</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background-image: url('https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/34ea7db04bf4c8eb51e511c0d16f3f35.jpg');
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/34ea7db04bf4c8eb51e511c0d16f3f35.jpg') no-repeat center center fixed;
       background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
       color: white;
+      text-align: center;
       overflow-x: hidden;
     }
-
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: -1;
+    .container {
+      padding: 30px;
     }
-
-    .content {
-      text-align: center;
-      padding: 60px 20px 20px;
-    }
-
     h1 {
-      font-size: 2.8em;
-      margin-bottom: 20px;
-      font-weight: bold;
+      font-size: 2.5em;
+      margin-top: 20px;
     }
-
     .typewriter {
-      display: inline-block;
-      font-size: 1.3em;
-      border-right: 2px solid white;
-      white-space: nowrap;
       overflow: hidden;
-      width: 0;
-      animation: typing 4s steps(40, end) forwards, blink .75s step-end infinite;
+      border-right: .15em solid pink;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .1em;
+      animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+      font-size: 1.5em;
+      max-width: 90%;
     }
-
     @keyframes typing {
       from { width: 0 }
       to { width: 100% }
     }
-
-    @keyframes blink {
-      50% { border-color: transparent; }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: pink }
     }
-
-    .images {
-      margin-top: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
     .images img {
-      width: 200px;
-      height: auto;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-      transition: transform 0.3s ease;
-    }
-
-    .images img:hover {
-      transform: scale(1.05);
-    }
-
-    .quote {
-      margin-top: 40px;
-      font-size: 1.4em;
-      font-style: italic;
-      animation: glow 2s infinite alternate;
-    }
-
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 10px #ff7de9, 0 0 20px #ff99ec;
-      }
-      to {
-        text-shadow: 0 0 20px #ffc4f5, 0 0 30px #ffe3f8;
-      }
-    }
-
-    .heart-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #ff69b4;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 24px;
-      color: white;
+      width: 250px;
+      margin: 20px;
+      border-radius: 20px;
       cursor: pointer;
-      box-shadow: 0 0 10px #ff69b4;
-      z-index: 10;
-      transition: transform 0.2s ease;
+      transition: transform 0.3s;
     }
-
-    .heart-btn:hover {
+    .images img:hover {
       transform: scale(1.1);
     }
-
     .popup {
       display: none;
       position: fixed;
-      bottom: 100px;
-      right: 20px;
-      background: white;
+      background: rgba(255, 182, 193, 0.8);
       color: black;
-      padding: 15px 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px #ff69b4;
+      padding: 12px 20px;
+      border-radius: 10px;
       font-weight: bold;
+      z-index: 10;
+      font-size: 18px;
     }
-
-    /* Falling hearts */
-    .heart {
+    .btn {
+      background: pink;
+      color: black;
+      border: none;
+      padding: 15px 30px;
+      margin-top: 20px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: hotpink;
+      color: white;
+    }
+    .hearts {
       position: fixed;
-      top: -10px;
-      width: 20px;
-      height: 20px;
-      background: url('https://i.imgur.com/5Yzj0xN.png') no-repeat center center;
-      background-size: contain;
-      animation: fall 8s linear infinite;
-      z-index: 0;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 5;
     }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(0) rotate(0);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
-
-  <div class="content">
-    <h1>For My Shravi</h1>
-    <div class="typewriter">I love you mommy - Hiro kun</div>
-
-    <div class="quote">"In a world full of Zero Twos, you're my only Hiro..."</div>
-
-    <div class="images">
-      <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/fb6402763b9bf6dc59f4793f3b8f2d73.jpg" alt="zero two 1"/>
-      <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/f77eb6c10af3b05f99fa71fa1793b5d6.jpg" alt="zero two 2"/>
-      <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/49b4748c19ade54f9ebbe09f37c7decf.jpg" alt="zero two 3"/>
-    </div>
-  </div>
-
-  <button class="heart-btn" onclick="showLove()">❤️</button>
-  <div class="popup" id="popupMsg">You mean everything to me, Shravi!</div>
-
-  <!-- Music -->
   <audio autoplay loop>
-    <source src="https://raw.githubusercontent.com/kakashuuu/Html/master/y2mate.com%20-%20Darling%20in%20the%20franxx%20edit%20_%20Zero%20two%20x%20Hiro.mp3" type="audio/mpeg">
+    <source src="https://raw.githubusercontent.com/kakashuuu/Html/master/y2mate.com%20-%20Darling%20in%20the%20franxx%20edit%20_%20Zero%20two%20x%20Hiro.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
   </audio>
 
-  <!-- Hearts animation script -->
+  <div class="container">
+    <h1>Hi Shravi</h1>
+    <p class="typewriter">Mujhe tumse ek baat kehni hai... I Love You Mommy!</p>
+
+    <div class="images">
+      <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/fb6402763b9bf6dc59f4793f3b8f2d73.jpg" alt="1" onclick="showMessage('Tumhari muskurahat meri duniya hai, Shravi.')">
+      <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/f77eb6c10af3b05f99fa71fa1793b5d6.jpg" alt="2" onclick="showMessage('Mujhe tumse roz aur zyada pyaar hota hai.')">
+      <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/49b4748c19ade54f9ebbe09f37c7decf.jpg" alt="3" onclick="showMessage('Tu meri Zero Two hai, aur main tera Hiro.')">
+    </div>
+
+    <div class="popup" id="imageMsg" style="bottom: 150px; right: 20px;"></div>
+
+    <!-- Only One Button -->
+    <button class="btn" onclick="showLove()">Click Me Mommy</button>
+    <div id="loveMsg" style="margin-top: 30px; font-size: 20px; font-weight: bold;"></div>
+  </div>
+
+  <canvas class="hearts" id="heartsCanvas" width="300" height="300"></canvas>
+
   <script>
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (Math.random() * 3 + 5) + "s";
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 8000);
-    }
-
-    setInterval(createHeart, 300);
-
     function showLove() {
-      const popup = document.getElementById("popupMsg");
-      popup.style.display = "block";
-      setTimeout(() => popup.style.display = "none", 3000);
+      const loveMsg = document.getElementById("loveMsg");
+      loveMsg.innerText = "Main hamesha tumhare saath rahunga Shravi! Hiro aur Shravi forever!";
     }
+
+    function showMessage(text) {
+      const msg = document.getElementById("imageMsg");
+      msg.innerText = text;
+      msg.style.display = "block";
+      setTimeout(() => msg.style.display = "none", 4000);
+    }
+
+    // Hearts animation
+    const canvas = document.getElementById('heartsCanvas');
+    const ctx = canvas.getContext('2d');
+    let hearts = [];
+
+    function Heart() {
+      this.x = Math.random() * canvas.width;
+      this.y = canvas.height + Math.random() * 100;
+      this.size = Math.random() * 20 + 10;
+      this.speed = Math.random() * 1 + 0.5;
+      this.opacity = Math.random();
+    }
+
+    function drawHeart(heart) {
+      ctx.beginPath();
+      ctx.moveTo(heart.x, heart.y);
+      ctx.bezierCurveTo(heart.x, heart.y - heart.size, heart.x - heart.size, heart.y - heart.size, heart.x - heart.size, heart.y);
+      ctx.bezierCurveTo(heart.x - heart.size, heart.y + heart.size, heart.x, heart.y + heart.size * 1.5, heart.x, heart.y + heart.size * 2);
+      ctx.bezierCurveTo(heart.x, heart.y + heart.size * 1.5, heart.x + heart.size, heart.y + heart.size, heart.x + heart.size, heart.y);
+      ctx.bezierCurveTo(heart.x + heart.size, heart.y - heart.size, heart.x, heart.y - heart.size, heart.x, heart.y);
+      ctx.fillStyle = `rgba(255, 105, 180, ${heart.opacity})`;
+      ctx.fill();
+    }
+
+    function animateHearts() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      hearts.forEach((heart, i) => {
+        heart.y -= heart.speed;
+        heart.opacity -= 0.005;
+        if (heart.opacity <= 0) {
+          hearts.splice(i, 1);
+          hearts.push(new Heart());
+        }
+        drawHeart(heart);
+      });
+      requestAnimationFrame(animateHearts);
+    }
+
+    for (let i = 0; i < 20; i++) {
+      hearts.push(new Heart());
+    }
+
+    animateHearts();
   </script>
 </body>
 </html>
