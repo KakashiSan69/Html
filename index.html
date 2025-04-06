@@ -2,63 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>For My Love Shravi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Shravi</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-
-    body, html {
-      height: 100%;
       font-family: 'Segoe UI', sans-serif;
-      color: white;
-      scroll-behavior: smooth;
     }
-
-    section {
+    body {
+      background: white;
+      color: black;
+      font-weight: bold;
+    }
+    .page {
+      display: none;
       height: 100vh;
-      display: flex;
+      width: 100vw;
+      padding: 40px 20px;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 40px;
-      background-size: cover;
-      background-position: center;
+      transition: opacity 0.5s ease-in-out;
     }
-
-    h1 {
-      font-size: 3em;
+    .page.active {
+      display: flex;
+      opacity: 1;
+    }
+    img {
+      max-width: 90%;
+      max-height: 300px;
+      border: 5px solid black;
+      border-radius: 20px;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 5px #000;
     }
-
-    p {
-      font-size: 1.5em;
-      line-height: 1.8;
-      max-width: 800px;
-      text-shadow: 2px 2px 5px #000;
-    }
-
-    a.button {
-      margin-top: 30px;
-      padding: 15px 30px;
-      background-color: #ff69b4;
-      color: black;
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: black;
+      color: white;
       border: none;
-      border-radius: 30px;
-      font-size: 1.2em;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
     }
-
-    a.button:hover {
-      background-color: hotpink;
+    .btn:hover {
+      background: #333;
     }
-
     audio {
       display: none;
     }
@@ -66,45 +58,51 @@
 </head>
 <body>
 
-  <!-- Background music -->
-  <audio autoplay loop>
-    <source src="https://raw.githubusercontent.com/kakashuuu/Html/master/y2mate.com%20-%20Darling%20in%20the%20franxx%20edit%20_%20Zero%20two%20x%20Hiro.mp3" type="audio/mpeg">
-  </audio>
+<audio autoplay loop>
+  <source src="https://raw.githubusercontent.com/kakashuuu/Html/master/y2mate.com%20-%20Darling%20in%20the%20franxx%20edit%20_%20Zero%20two%20x%20Hiro.mp3" type="audio/mpeg">
+</audio>
 
-  <!-- Page 1 -->
-  <section id="page1" style="background-image: url('https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/fb6402763b9bf6dc59f4793f3b8f2d73.jpg');">
-    <h1>Dear Shravi,</h1>
-    <p>
-      From the very first moment I met you, something in my heart whispered that you're the one I was waiting for. Your smile lights up my soul, your voice calms my chaos, and your presence makes everything better.
-    </p>
-    <a href="#page2" class="button">Next</a>
-  </section>
+<div class="page active">
+  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/34ea7db04bf4c8eb51e511c0d16f3f35.jpg" alt="Zero Two">
+  <p>Mujhe tumse ek baat kehni hai 🥺❤️<br/>I love you Mommy Shravi 💌</p>
+  <button class="btn" onclick="nextPage()">Next</button>
+</div>
 
-  <!-- Page 2 -->
-  <section id="page2" style="background-image: url('https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/f77eb6c10af3b05f99fa71fa1793b5d6.jpg');">
-    <h1>My Love,</h1>
-    <p>
-      Every heartbeat of mine whispers your name. You're not just someone I love, you're the reason I believe in love. With you, I feel complete — like I'm finally home.
-    </p>
-    <a href="#page3" class="button">Next</a>
-  </section>
+<div class="page">
+  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/fb6402763b9bf6dc59f4793f3b8f2d73.jpg" alt="Love">
+  <p>Tum meri duniya ho 🌍<br/>Main hamesha tumhara Hiro kun rahunga ❤️</p>
+  <button class="btn" onclick="nextPage()">Next</button>
+</div>
 
-  <!-- Page 3 -->
-  <section id="page3" style="background-image: url('https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/49b4748c19ade54f9ebbe09f37c7decf.jpg');">
-    <h1>Always Yours,</h1>
-    <p>
-      No matter where life takes us, remember this — I’ll always choose you. Again and again, in a hundred lifetimes, in any version of reality, it's always you. I love you mommy, forever.
-    </p>
-    <a href="#page4" class="button">Next</a>
-  </section>
+<div class="page">
+  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/f77eb6c10af3b05f99fa71fa1793b5d6.jpg" alt="Together">
+  <p>Jab bhi tum muskurati ho, mera dil khush ho jata hai 🥹💖<br/>Tum mere liye sab kuch ho Mommy 💘</p>
+  <button class="btn" onclick="nextPage()">Next</button>
+</div>
 
-  <!-- Final Page -->
-  <section id="page4" style="background-image: url('https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/34ea7db04bf4c8eb51e511c0d16f3f35.jpg');">
-    <h1>Shravi X Ayanokouji</h1>
-    <p>
-      This story of love, dreams, and forever — is all ours. You're my Zero Two, and I'm your Hiro. Till the stars fall from the sky — it's us. Always us.
-    </p>
-  </section>
+<div class="page">
+  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/49b4748c19ade54f9ebbe09f37c7decf.jpg" alt="Love Forever">
+  <p>Jab tak saansein chalti rahengi, main tumse pyaar karta rahunga ❤️‍🔥<br/>I love you endlessly my Shravi 💞</p>
+  <button class="btn" onclick="nextPage()">Next</button>
+</div>
+
+<div class="page">
+  <h1 style="font-size: 40px;">Shravi × Ayanokouji 💖</h1>
+  <p style="margin-top: 20px;">Hamesha saath rahenge — Hiro kun & Mommy ❤️</p>
+</div>
+
+<script>
+  let currentPage = 0;
+  const pages = document.querySelectorAll(".page");
+
+  function nextPage() {
+    if (currentPage < pages.length - 1) {
+      pages[currentPage].classList.remove("active");
+      currentPage++;
+      pages[currentPage].classList.add("active");
+    }
+  }
+</script>
 
 </body>
 </html>
