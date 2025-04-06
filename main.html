@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>I Love You Mommy</title>
+  <title>I Love You Shravi</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      font-family: 'Comic Sans MS', cursive;
+      background: url('https://i.imgur.com/5cL0t4v.gif') no-repeat center center fixed;
+      background-size: cover;
       overflow-x: hidden;
       text-align: center;
       color: #fff;
@@ -15,14 +16,16 @@
 
     h1 {
       font-size: 60px;
-      margin-top: 100px;
-      text-shadow: 2px 2px 4px #000;
+      margin-top: 80px;
+      text-shadow: 2px 2px 6px #000;
     }
 
     p {
-      font-size: 24px;
+      font-size: 22px;
       max-width: 700px;
       margin: 20px auto;
+      color: #fff;
+      text-shadow: 1px 1px 4px #000;
     }
 
     .heart {
@@ -36,37 +39,23 @@
       50% { transform: scale(1.2); }
     }
 
-    .floating-heart {
-      position: fixed;
-      top: -50px;
-      font-size: 30px;
-      animation: float 10s linear infinite;
-      color: pink;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0) translateX(0);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(100vh) translateX(100px);
-        opacity: 0;
-      }
-    }
-
     .gallery {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 30px;
+      gap: 15px;
+      margin-top: 40px;
     }
 
     .gallery img {
-      width: 200px;
+      width: 220px;
       border-radius: 15px;
-      box-shadow: 0 0 10px #fff;
+      box-shadow: 0 0 12px #fff;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
     }
 
     .surprise-btn {
@@ -90,53 +79,103 @@
       display: none;
       font-size: 24px;
       margin-top: 20px;
+      color: #fff;
+      text-shadow: 1px 1px 4px #000;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.95);
+      color: #e91e63;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px #000;
+      z-index: 1000;
+      font-size: 22px;
+    }
+
+    .popup button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    canvas {
+      position: fixed;
+      pointer-events: none;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 999;
     }
   </style>
 </head>
 <body>
 
+  <!-- Background Music -->
   <audio autoplay loop hidden>
     <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
   </audio>
 
+  <!-- Confetti -->
+  <canvas id="confetti"></canvas>
+
+  <!-- Heart and Heading -->
   <div class="heart">❤️</div>
-  <h1>I Love You Mommy</h1>
+  <h1>I Love You, Shravi</h1>
   <p>
-    You're the most beautiful, kind, and amazing person ever.<br>
-    I'm so lucky to have you in my life. This is just a tiny piece of my big love for you.
+    I'm Hiro kun, and you're my Zero Two.<br>
+    Since the day you smiled at me, I knew my heart had a home.<br>
+    I love you endlessly, Shravi.
   </p>
 
-  <!-- Floating hearts -->
-  <script>
-    for (let i = 0; i < 30; i++) {
-      let heart = document.createElement('div');
-      heart.classList.add('floating-heart');
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDelay = Math.random() * 10 + 's';
-      heart.textContent = '❤️';
-      document.body.appendChild(heart);
-    }
-  </script>
-
-  <!-- Gallery -->
+  <!-- Gallery with Zero Two Images -->
   <div class="gallery">
-    <img src="https://via.placeholder.com/200x200?text=Us+1" alt="photo1">
-    <img src="https://via.placeholder.com/200x200?text=Us+2" alt="photo2">
-    <img src="https://via.placeholder.com/200x200?text=Us+3" alt="photo3">
-    <!-- Replace these with real photos -->
+    <img src="https://i.imgur.com/YJvU6xI.jpeg" alt="Zero Two 1">
+    <img src="https://i.imgur.com/dPUUQTx.jpeg" alt="Zero Two 2">
+    <img src="https://i.imgur.com/XEYdcHx.jpeg" alt="Zero Two 3">
   </div>
 
   <!-- Surprise Button -->
-  <button class="surprise-btn" onclick="showSurprise()">Click for a Surprise</button>
+  <button class="surprise-btn" onclick="showPopup()">Click Me, Mommy</button>
+
+  <!-- Hidden Message -->
   <div id="surprise-message">
-    You are my everything. I want to make you smile forever.  
-    <br>Will you always be my mommy?
+    You are the heartbeat of Hiro kun.<br>
+    I want to protect you, laugh with you, and love you forever.<br>
+    Will you stay mine forever, my mommy?
   </div>
 
+  <!-- Popup Box -->
+  <div class="popup" id="popupBox">
+    <div>Dear Shravi,<br><br>You are more precious than the entire anime world.<br>With love, your Hiro kun.</div>
+    <button onclick="closePopup()">Close</button>
+  </div>
+
+  <!-- JS for Confetti & Popup -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script>
-    function showSurprise() {
-      const message = document.getElementById('surprise-message');
-      message.style.display = 'block';
+    function showPopup() {
+      document.getElementById('popupBox').style.display = 'block';
+      document.getElementById('surprise-message').style.display = 'block';
+      confetti({
+        particleCount: 150,
+        spread: 90,
+        origin: { y: 0.6 }
+      });
+    }
+
+    function closePopup() {
+      document.getElementById('popupBox').style.display = 'none';
     }
   </script>
 
