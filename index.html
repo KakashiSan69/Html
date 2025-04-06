@@ -1,184 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>I Love You Shravi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>I Love You Mommy Shravi</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Arial Black', sans-serif;
-      background: url('https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/34ea7db04bf4c8eb51e511c0d16f3f35.jpg') no-repeat center center fixed;
+      padding: 0;
+      background-image: url('https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/34ea7db04bf4c8eb51e511c0d16f3f35.jpg');
       background-size: cover;
-      overflow-x: hidden;
-      text-align: center;
-      color: #fff;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     h1 {
-      font-size: 60px;
-      margin-top: 80px;
-      text-shadow: 2px 2px 6px #000;
+      font-size: 3em;
+      margin-bottom: 20px;
+      text-align: center;
     }
 
-    p {
-      font-size: 22px;
-      max-width: 700px;
-      margin: 20px auto;
-      color: #fff;
-      text-shadow: 1px 1px 4px #000;
-    }
-
-    .heart {
-      font-size: 100px;
-      animation: beat 1s infinite;
-      color: red;
-    }
-
-    @keyframes beat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-    }
-
-    .gallery {
+    .images {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 15px;
-      margin-top: 40px;
     }
 
-    .gallery img {
-      width: 220px;
+    .images img {
+      width: 200px;
+      height: auto;
       border-radius: 15px;
-      box-shadow: 0 0 12px #fff;
-      transition: transform 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
     }
 
-    .gallery img:hover {
+    .images img:hover {
       transform: scale(1.05);
     }
 
-    .surprise-btn {
-      background: #fff;
-      color: #e91e63;
-      border: none;
-      padding: 15px 30px;
-      font-size: 20px;
-      border-radius: 30px;
-      cursor: pointer;
-      margin-top: 30px;
-      transition: 0.3s;
-      font-weight: bold;
-    }
-
-    .surprise-btn:hover {
-      background: #e91e63;
-      color: white;
-    }
-
-    #surprise-message {
+    audio {
       display: none;
-      font-size: 24px;
-      margin-top: 20px;
-      color: #fff;
-      text-shadow: 1px 1px 4px #000;
-    }
-
-    .popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: rgba(255, 255, 255, 0.95);
-      color: #e91e63;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 0 15px #000;
-      z-index: 1000;
-      font-size: 22px;
-    }
-
-    .popup button {
-      margin-top: 15px;
-      padding: 10px 20px;
-      background: #e91e63;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    canvas {
-      position: fixed;
-      pointer-events: none;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 999;
     }
   </style>
 </head>
 <body>
+  <h1>I Love You Mommy Shravi</h1>
 
-  <!-- Background Music - 2 Phút Hơn -->
-  <audio autoplay loop hidden>
-    <source src="https://dl.dropboxusercontent.com/scl/fi/tvbi7nmbw6szcbnyp7zjw/2-phut-hon.mp3?rlkey=l5zq4dhszt7bnvzxdkpwqv5s4&dl=0" type="audio/mp3">
+  <div class="images">
+    <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/fb6402763b9bf6dc59f4793f3b8f2d73.jpg" alt="Zero Two 1">
+    <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/f77eb6c10af3b05f99fa71fa1793b5d6.jpg" alt="Zero Two 2">
+    <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/49b4748c19ade54f9ebbe09f37c7decf.jpg" alt="Zero Two 3">
+  </div>
+
+  <audio id="bg-music" autoplay loop>
+    <source src="https://raw.githubusercontent.com/kakashuuu/Html/master/y2mate.com%20-%20Darling%20in%20the%20franxx%20edit%20_%20Zero%20two%20x%20Hiro.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
   </audio>
 
-  <!-- Confetti -->
-  <canvas id="confetti"></canvas>
-
-  <!-- Heart and Heading -->
-  <div class="heart">❤️</div>
-  <h1>I Love You, Shravi</h1>
-  <p>
-    I'm <b>Hiro kun</b>, and you're my Zero Two.<br>
-    Since the day you smiled at me, I knew my heart had a home.<br>
-    I love you endlessly, <b>Shravi</b>.
-  </p>
-
-  <!-- Gallery with Your Custom Images -->
-  <div class="gallery">
-    <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/fb6402763b9bf6dc59f4793f3b8f2d73.jpg" alt="Image 1">
-    <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/f77eb6c10af3b05f99fa71fa1793b5d6.jpg" alt="Image 2">
-    <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/49b4748c19ade54f9ebbe09f37c7decf.jpg" alt="Image 3">
-  </div>
-
-  <!-- Surprise Button -->
-  <button class="surprise-btn" onclick="showPopup()">Click Me, Mommy</button>
-
-  <!-- Hidden Message -->
-  <div id="surprise-message">
-    You are the heartbeat of <b>Hiro kun</b>.<br>
-    I want to protect you, laugh with you, and love you forever.<br>
-    Will you stay mine forever, my mommy?
-  </div>
-
-  <!-- Popup Box -->
-  <div class="popup" id="popupBox">
-    <div>Dear Shravi,<br><br>You are more precious than the entire anime world.<br>With love, your <b>Hiro kun</b>.</div>
-    <button onclick="closePopup()">Close</button>
-  </div>
-
-  <!-- JS for Confetti & Popup -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script>
-    function showPopup() {
-      document.getElementById('popupBox').style.display = 'block';
-      document.getElementById('surprise-message').style.display = 'block';
-      confetti({
-        particleCount: 150,
-        spread: 90,
-        origin: { y: 0.6 }
-      });
-    }
-
-    function closePopup() {
-      document.getElementById('popupBox').style.display = 'none';
-    }
+    // To ensure autoplay works after user interaction
+    document.body.addEventListener('click', () => {
+      const music = document.getElementById("bg-music");
+      if (music.paused) music.play();
+    });
   </script>
-
 </body>
 </html>
