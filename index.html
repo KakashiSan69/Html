@@ -35,7 +35,8 @@
     }
 
     img {
-      width: 280px;
+      width: 350px;
+      max-width: 90vw;
       height: auto;
       object-fit: cover;
       border-radius: 20px;
@@ -49,9 +50,9 @@
       background: #ff4d6d;
       color: white;
       border: none;
-      padding: 10px 20px;
-      font-size: 18px;
-      border-radius: 10px;
+      padding: 14px 28px;
+      font-size: 22px;
+      border-radius: 12px;
       cursor: pointer;
       transition: 0.3s;
     }
@@ -62,8 +63,8 @@
 
     .typewriter {
       font-weight: bold;
-      font-size: 20px;
-      max-width: 80%;
+      font-size: 24px;
+      max-width: 90%;
       text-align: center;
     }
 
@@ -84,16 +85,16 @@
 
     @media (max-width: 600px) {
       .typewriter, p, h1 {
-        font-size: 5vw;
+        font-size: 6vw;
       }
 
       img {
-        width: 80%;
+        width: 90%;
       }
 
       .btn {
         font-size: 5vw;
-        padding: 8px 16px;
+        padding: 10px 20px;
       }
 
       .page {
@@ -104,8 +105,9 @@
 </head>
 <body>
 
+<!-- Fixed MP3 link for GitHub -->
 <audio id="bgMusic" autoplay loop>
-  <source src="https://github.com/kakashuuu/Html/blob/master/y2mate.com%20-%20Line%20without%20a%20hook%20AMV%20edit%20weathering%20with%20you%20(alight%20motion).mp3" type="audio/mpeg">
+  <source src="https://github.com/kakashuuu/Html/raw/master/y2mate.com%20-%20Line%20without%20a%20hook%20AMV%20edit%20weathering%20with%20you%20(alight%20motion).mp3" type="audio/mpeg">
 </audio>
 
 <div class="page active">
@@ -116,7 +118,7 @@
 </div>
 
 <div class="page">
-  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/fb6402763b9bf6dc59f4793f3b8f2d73.jpg" onclick="showMessage('Ohh My Darling Why You are This much cute my bakano you are too innocent fr I want you to be safe always as per now I have adopted my baby girl so it's my responsibility to take care of her hehehe go next 🌸✨')">
+  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/fb6402763b9bf6dc59f4793f3b8f2d73.jpg" onclick="showMessage('Ohh My Darling Why You are This much cute my bakano you are too innocent fr I want you to be safe always as per now I have adopted my baby girl so it\'s my responsibility to take care of her hehehe go next 🌸✨')">
   <p><strong>Ohh My Darling Why You are This much cute my bakano you are too innocent fr I want you to be safe always as per now I have adopted my baby girl so it's my responsibility to take care of her hehehe go next 🌸✨</strong></p>
   <button class="btn" onclick="nextPage()">Next</button>
 </div>
