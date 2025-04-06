@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>For My Love Shravi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
@@ -66,7 +67,6 @@
       text-align: center;
     }
 
-    /* Heart rain */
     .heart {
       position: fixed;
       top: -50px;
@@ -81,48 +81,64 @@
         transform: translateY(110vh) rotate(360deg);
       }
     }
+
+    @media (max-width: 600px) {
+      .typewriter, p, h1 {
+        font-size: 5vw;
+      }
+
+      img {
+        width: 80%;
+      }
+
+      .btn {
+        font-size: 5vw;
+        padding: 8px 16px;
+      }
+
+      .page {
+        padding: 20px 10px;
+      }
+    }
   </style>
 </head>
 <body>
 
-<!-- Background music -->
 <audio id="bgMusic" autoplay loop>
   <source src="https://raw.githubusercontent.com/kakashuuu/Html/master/y2mate.com%20-%20Darling%20in%20the%20franxx%20edit%20_%20Zero%20two%20x%20Hiro.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Pages -->
 <div class="page active">
-  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/34ea7db04bf4c8eb51e511c0d16f3f35.jpg" onclick="showMessage('Shravi, tum meri duniya ho!')">
+  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/34ea7db04bf4c8eb51e511c0d16f3f35.jpg" onclick="showMessage('Shravi, tum meri zindagi ka wo hissa ho jiske bina main adhura hoon... You complete me, my love!')">
   <div class="typewriter" id="text1"></div>
   <br>
   <button class="btn" onclick="nextPage()">Next</button>
 </div>
 
 <div class="page">
-  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/fb6402763b9bf6dc59f4793f3b8f2d73.jpg" onclick="showMessage('Tumhara muskurana meri jaan ban gaya hai!')">
-  <p style="font-weight: bold;">Tumhari aankhon mein meri duniya basa chuki hai</p>
+  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/fb6402763b9bf6dc59f4793f3b8f2d73.jpg" onclick="showMessage('Tumhari muskurahat mere dil ki taqdeer ban gayi hai... Whenever you smile, my world lights up!')">
+  <p><strong>Tumhari aankhon mein meri duniya basa chuki hai</strong></p>
   <button class="btn" onclick="nextPage()">Next</button>
 </div>
 
 <div class="page">
-  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/f77eb6c10af3b05f99fa71fa1793b5d6.jpg" onclick="showMessage('I love you so much mommy!')">
-  <p style="font-weight: bold;">Tum mere Hiro ke Zero Two ho</p>
+  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/f77eb6c10af3b05f99fa71fa1793b5d6.jpg" onclick="showMessage('Tum meri Zero Two ho aur main tumhara Hiro... Hum dono ek dusre ke liye hi bane hain!')">
+  <p><strong>Tum mere Hiro ke Zero Two ho</strong></p>
   <button class="btn" onclick="nextPage()">Next</button>
 </div>
 
 <div class="page">
-  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/49b4748c19ade54f9ebbe09f37c7decf.jpg" onclick="showMessage('Tumse pyar karna meri zindagi ka sabse khoobsurat hissa hai!')">
-  <p style="font-weight: bold;">Har pal, har saans tumhare naam</p>
+  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/49b4748c19ade54f9ebbe09f37c7decf.jpg" onclick="showMessage('Har din tumhare bina suna lagta hai... You are my sunshine on the darkest days, meri jaan!')">
+  <p><strong>Har pal, har saans tumhare naam</strong></p>
   <button class="btn" onclick="nextPage()">Next</button>
 </div>
 
 <div class="page">
-  <h1 style="font-size: 32px;">Shravi X Ayanokouji</h1>
-  <p style="font-size: 18px;">Forever & Always</p>
-  <button class="btn" onclick="showMessage('Mujhe tumse ek baat kehni hai... I love you mommy!')">Mommy</button>
+  <h1>Shravi X Ayanokouji</h1>
+  <p>Forever & Always</p>
+  <button class="btn" onclick="showMessage('Mujhe tumse ek baat kehni hai... Dil se, jaan se, har saans se... I love you, my forever mommy!')">Mommy</button>
 </div>
 
-<!-- JS -->
 <script>
   const pages = document.querySelectorAll(".page");
   let currentPage = 0;
@@ -132,15 +148,14 @@
     pages[currentPage].classList.remove("active");
     currentPage = (currentPage + 1) % pages.length;
     pages[currentPage].classList.add("active");
-    music.play().catch(()=>{}); // Force play on click
+    music.play().catch(()=>{});
   }
 
   function showMessage(msg) {
     alert(msg);
-    music.play().catch(()=>{}); // Play music if blocked
+    music.play().catch(()=>{});
   }
 
-  // Typewriter effect
   const text = "Mujhe tumse ek baat kehni hai... I love you mommy!";
   let i = 0;
   function typeWriter() {
@@ -152,7 +167,6 @@
   }
   typeWriter();
 
-  // Heart rain generator
   function createHearts() {
     const heart = document.createElement("div");
     heart.className = "heart";
