@@ -2,170 +2,109 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>I Love You Shravi</title>
+  <title>For My Love Shravi</title>
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
       font-family: 'Segoe UI', sans-serif;
-      background: url('https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/34ea7db04bf4c8eb51e511c0d16f3f35.jpg') no-repeat center center fixed;
-      background-size: cover;
       color: white;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      overflow-x: hidden;
+      padding: 40px;
+      background-size: cover;
+      background-position: center;
     }
-    .container {
-      padding: 30px;
-    }
+
     h1 {
-      font-size: 2.5em;
-      margin-top: 20px;
+      font-size: 3em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px #000;
     }
-    .typewriter {
-      overflow: hidden;
-      border-right: .15em solid pink;
-      white-space: nowrap;
-      margin: 0 auto;
-      letter-spacing: .1em;
-      animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+
+    p {
       font-size: 1.5em;
-      max-width: 90%;
+      line-height: 1.8;
+      max-width: 800px;
+      text-shadow: 2px 2px 5px #000;
     }
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: pink }
-    }
-    .images img {
-      width: 250px;
-      margin: 20px;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-    .images img:hover {
-      transform: scale(1.1);
-    }
-    .popup {
-      display: none;
-      position: fixed;
-      background: rgba(255, 182, 193, 0.8);
-      color: black;
-      padding: 12px 20px;
-      border-radius: 10px;
-      font-weight: bold;
-      z-index: 10;
-      font-size: 18px;
-    }
-    .btn {
-      background: pink;
+
+    a.button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      background-color: #ff69b4;
       color: black;
       border: none;
-      padding: 15px 30px;
-      margin-top: 20px;
-      font-size: 16px;
       border-radius: 30px;
-      cursor: pointer;
+      font-size: 1.2em;
+      text-decoration: none;
+      font-weight: bold;
       transition: background 0.3s;
     }
-    .btn:hover {
-      background: hotpink;
-      color: white;
+
+    a.button:hover {
+      background-color: hotpink;
     }
-    .hearts {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 5;
+
+    audio {
+      display: none;
     }
   </style>
 </head>
 <body>
+
+  <!-- Background music -->
   <audio autoplay loop>
-    <source src="https://raw.githubusercontent.com/kakashuuu/Html/master/y2mate.com%20-%20Darling%20in%20the%20franxx%20edit%20_%20Zero%20two%20x%20Hiro.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
+    <source src="https://raw.githubusercontent.com/kakashuuu/Html/master/y2mate.com%20-%20Darling%20in%20the%20franxx%20edit%20_%20Zero%20two%20x%20Hiro.mp3" type="audio/mpeg">
   </audio>
 
-  <div class="container">
-    <h1>Hi Shravi</h1>
-    <p class="typewriter">Mujhe tumse ek baat kehni hai... I Love You Mommy!</p>
+  <!-- Page 1 -->
+  <section id="page1" style="background-image: url('https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/fb6402763b9bf6dc59f4793f3b8f2d73.jpg');">
+    <h1>Dear Shravi,</h1>
+    <p>
+      From the very first moment I met you, something in my heart whispered that you're the one I was waiting for. Your smile lights up my soul, your voice calms my chaos, and your presence makes everything better.
+    </p>
+    <a href="#page2" class="button">Next</a>
+  </section>
 
-    <div class="images">
-      <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/fb6402763b9bf6dc59f4793f3b8f2d73.jpg" alt="1" onclick="showMessage('Tumhari muskurahat meri duniya hai, Shravi.')">
-      <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/f77eb6c10af3b05f99fa71fa1793b5d6.jpg" alt="2" onclick="showMessage('Mujhe tumse roz aur zyada pyaar hota hai.')">
-      <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/49b4748c19ade54f9ebbe09f37c7decf.jpg" alt="3" onclick="showMessage('Tu meri Zero Two hai, aur main tera Hiro.')">
-    </div>
+  <!-- Page 2 -->
+  <section id="page2" style="background-image: url('https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/f77eb6c10af3b05f99fa71fa1793b5d6.jpg');">
+    <h1>My Love,</h1>
+    <p>
+      Every heartbeat of mine whispers your name. You're not just someone I love, you're the reason I believe in love. With you, I feel complete — like I'm finally home.
+    </p>
+    <a href="#page3" class="button">Next</a>
+  </section>
 
-    <div class="popup" id="imageMsg" style="bottom: 150px; right: 20px;"></div>
+  <!-- Page 3 -->
+  <section id="page3" style="background-image: url('https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/49b4748c19ade54f9ebbe09f37c7decf.jpg');">
+    <h1>Always Yours,</h1>
+    <p>
+      No matter where life takes us, remember this — I’ll always choose you. Again and again, in a hundred lifetimes, in any version of reality, it's always you. I love you mommy, forever.
+    </p>
+    <a href="#page4" class="button">Next</a>
+  </section>
 
-    <!-- Only One Button -->
-    <button class="btn" onclick="showLove()">Click Me Mommy</button>
-    <div id="loveMsg" style="margin-top: 30px; font-size: 20px; font-weight: bold;"></div>
-  </div>
+  <!-- Final Page -->
+  <section id="page4" style="background-image: url('https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/34ea7db04bf4c8eb51e511c0d16f3f35.jpg');">
+    <h1>Shravi X Ayanokouji</h1>
+    <p>
+      This story of love, dreams, and forever — is all ours. You're my Zero Two, and I'm your Hiro. Till the stars fall from the sky — it's us. Always us.
+    </p>
+  </section>
 
-  <canvas class="hearts" id="heartsCanvas" width="300" height="300"></canvas>
-
-  <script>
-    function showLove() {
-      const loveMsg = document.getElementById("loveMsg");
-      loveMsg.innerText = "Main hamesha tumhare saath rahunga Shravi! Hiro aur Shravi forever!";
-    }
-
-    function showMessage(text) {
-      const msg = document.getElementById("imageMsg");
-      msg.innerText = text;
-      msg.style.display = "block";
-      setTimeout(() => msg.style.display = "none", 4000);
-    }
-
-    // Hearts animation
-    const canvas = document.getElementById('heartsCanvas');
-    const ctx = canvas.getContext('2d');
-    let hearts = [];
-
-    function Heart() {
-      this.x = Math.random() * canvas.width;
-      this.y = canvas.height + Math.random() * 100;
-      this.size = Math.random() * 20 + 10;
-      this.speed = Math.random() * 1 + 0.5;
-      this.opacity = Math.random();
-    }
-
-    function drawHeart(heart) {
-      ctx.beginPath();
-      ctx.moveTo(heart.x, heart.y);
-      ctx.bezierCurveTo(heart.x, heart.y - heart.size, heart.x - heart.size, heart.y - heart.size, heart.x - heart.size, heart.y);
-      ctx.bezierCurveTo(heart.x - heart.size, heart.y + heart.size, heart.x, heart.y + heart.size * 1.5, heart.x, heart.y + heart.size * 2);
-      ctx.bezierCurveTo(heart.x, heart.y + heart.size * 1.5, heart.x + heart.size, heart.y + heart.size, heart.x + heart.size, heart.y);
-      ctx.bezierCurveTo(heart.x + heart.size, heart.y - heart.size, heart.x, heart.y - heart.size, heart.x, heart.y);
-      ctx.fillStyle = `rgba(255, 105, 180, ${heart.opacity})`;
-      ctx.fill();
-    }
-
-    function animateHearts() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      hearts.forEach((heart, i) => {
-        heart.y -= heart.speed;
-        heart.opacity -= 0.005;
-        if (heart.opacity <= 0) {
-          hearts.splice(i, 1);
-          hearts.push(new Heart());
-        }
-        drawHeart(heart);
-      });
-      requestAnimationFrame(animateHearts);
-    }
-
-    for (let i = 0; i < 20; i++) {
-      hearts.push(new Heart());
-    }
-
-    animateHearts();
-  </script>
 </body>
 </html>
