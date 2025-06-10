@@ -1,185 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>For My Love Shravi</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: white;
-      color: black;
-      overflow: hidden;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shiva Sharma - Anime Coder Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #111;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+  h1 {
+    font-size: 3rem;
+    color: #ff5e7e;
+    margin-bottom: 0.2rem;
+    opacity: 0;
+    animation: fadeInDown 1.5s ease forwards;
+  }
+  p.lead {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #ffa0ab;
+    margin: 0 0 2rem 0;
+    opacity: 0;
+    animation: fadeInUp 2s ease forwards;
+  }
+  .profile-img {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(255, 126, 95, 0.6);
+    width: 220px;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeIn 2.5s ease forwards;
+  }
+  .btn-contact {
+    background: linear-gradient(90deg, #f05, #ff7e5f);
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 126, 95, 0.6);
+    transition: background 0.3s ease;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeIn 3s ease forwards;
+  }
+  .btn-contact:hover {
+    background: linear-gradient(90deg, #ff7e5f, #f05);
+  }
+  section {
+    max-width: 900px;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  h2 {
+    color: #ff5e7e;
+    font-size: 2rem;
+    border-bottom: 2px solid #ff7e5f;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.5rem 1rem;
+  }
+  th {
+    background: #ff5e7e;
+    color: white;
+    width: 30%;
+  }
+  tr:nth-child(even) {
+    background: #222;
+  }
+  ul {
+    padding-left: 1.25rem;
+  }
+  code {
+    background: #222;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+  }
+  pre {
+    background: #222;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+  }
+  a {
+    color: #ff7e5f;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .socials table {
+    margin-top: 0.5rem;
+  }
+  .fun-gif {
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255, 126, 95, 0.6);
+    max-width: 220px;
+  }
+  .fun-quote {
+    font-style: italic;
+    color: #ffa0ab;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  footer {
+    font-weight: 700;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 1rem;
+    color: #ff5e7e;
+  }
+
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
     }
-
-    .page {
-      display: none;
-      padding: 40px 20px;
-      height: 100vh;
-      box-sizing: border-box;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
-
-    .page.active {
-      display: flex;
-      animation: fade 1s ease-in-out;
+  }
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
     }
-
-    @keyframes fade {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
-
-    img {
-      width: 350px;
-      max-width: 90%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 20px;
-      border: 2px solid #000;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-      margin-bottom: 20px;
-      cursor: pointer;
-    }
-
-    .btn {
-      background: #ff4d6d;
-      color: white;
-      border: none;
-      padding: 12px 28px;
-      font-size: 20px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #e04361;
-    }
-
-    .typewriter {
-      font-weight: bold;
-      font-size: 22px;
-      max-width: 80%;
-      text-align: center;
-    }
-
-    .heart {
-      position: fixed;
-      top: -50px;
-      color: red;
-      animation: fall 6s linear infinite;
-      font-size: 20px;
-      opacity: 0.7;
-    }
-
-    @keyframes fall {
-      to {
-        transform: translateY(110vh) rotate(360deg);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .typewriter, p, h1 {
-        font-size: 5vw;
-      }
-
-      img {
-        width: 80%;
-      }
-
-      .btn {
-        font-size: 5vw;
-        padding: 8px 16px;
-      }
-
-      .page {
-        padding: 20px 10px;
-      }
-    }
-  </style>
+  }
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+</style>
 </head>
 <body>
 
-<!-- Working MP3 link using raw.githubusercontent.com -->
-<audio id="bgMusic" autoplay loop>
-  <source src="https://raw.githubusercontent.com/kakashuuu/Html/master/y2mate.com%20-%20Line%20without%20a%20hook%20AMV%20edit%20weathering%20with%20you%20(alight%20motion).mp3" type="audio/mpeg">
-</audio>
+  <h1>🔥 Shiva Sharma 🔥</h1>
+  <p class="lead">🧑‍💻 Full-stack Developer | 🤖 Bot Mastermind | 🎌 Anime Dev Extraordinaire<br><em>"Code with heart, automate with soul, and live like every day is the final episode."</em></p>
 
-<div class="page active">
-  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/34ea7db04bf4c8eb51e511c0d16f3f35.jpg" onclick="showMessage('Shravi, tum meri zindagi ka wo hissa ho jiske bina main adhura hoon... You complete me, my love!')">
-  <div class="typewriter" id="text1"></div>
-  <br>
-  <button class="btn" onclick="nextPage()">Next</button>
-</div>
+  <img src="https://i.ibb.co/2Y6g4tsR/Snapchat-1804074959.jpg" alt="Shiva Sharma" class="profile-img" />
 
-<div class="page">
-  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/fb6402763b9bf6dc59f4793f3b8f2d73.jpg" onclick="showMessage('Ohh My Darling Why You are This much cute my bakano you are too innocent fr I want you to be safe always as per now I have adopted my baby girl so it\'s my responsibility to take care of her hehehe go next 🌸✨')">
-  <p><strong>Ohh My Darling Why You are This much cute my bakano you are too innocent fr I want you to be safe always as per now I have adopted my baby girl so it's my responsibility to take care of her hehehe go next 🌸✨</strong></p>
-  <button class="btn" onclick="nextPage()">Next</button>
-</div>
+  <button class="btn-contact" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
+    Contact Me 📬
+  </button>
 
-<div class="page">
-  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/f77eb6c10af3b05f99fa71fa1793b5d6.jpg" onclick="showMessage('hi')">
-  <p><strong>Tum meri Zero Two Mai Tumhara Hiro-Kun You are my cute sweet hottiepie baby girl hehe 😁😁</strong></p>
-  <button class="btn" onclick="nextPage()">Next</button>
-</div>
+  <section>
+    <h2>🌟 About Me</h2>
+    <p>Yo! I’m <strong>Shiva Sharma</strong> — a coder fueled by passion and anime vibes.<br>
+      From crafting powerful WhatsApp bots with <a href="https://github.com/WhiskeySockets/Baileys" target="_blank">@WhiskeySockets/Baileys</a> to building slick APIs and scraping entire universes, I bring automation and style together.</p>
+    <p>Check out my world here:<br>
+      👉 <a href="https://kakashuuu.github.io/Kakashuuu/" target="_blank"><strong>My Portfolio & Projects</strong></a> 👈
+    </p>
+  </section>
 
-<div class="page">
-  <img src="https://raw.githubusercontent.com/kakashuuu/testing/refs/heads/master/49b4748c19ade54f9ebbe09f37c7decf.jpg" onclick="showMessage('oh man')">
-  <p><strong>I always want to clear things between us so it will make less fight between us but relationship me ladai bhi to zaruri hai na jaan 😌 dont worry Mai tumhe hamesha manane aunga I never made a web for any of my bullshiit ex but You are my babygirl first girl ever who asked me how was your day really tbh I can't explain how I felt 🥺🥺🥺... You are my sunshine on the darkest days, meri jaan!</strong></p>
-  <button class="btn" onclick="nextPage()">Next</button>
-</div>
+  <section>
+    <h2>🚀 Tech Stack & Powers</h2>
+    <table>
+      <tbody>
+        <tr><th>Languages</th><td>TypeScript, JavaScript, Python</td></tr>
+        <tr><th>Frameworks</th><td>FastAPI, Express.js</td></tr>
+        <tr><th>Bot Frameworks</th><td><a href="https://github.com/WhiskeySockets/Baileys" target="_blank">@WhiskeySockets/Baileys</a>, Pyrogram</td></tr>
+        <tr><th>Scraping Tools</th><td>Puppeteer, Chromium</td></tr>
+        <tr><th>Media Handling</th><td>yt-dlp, cookies.txt</td></tr>
+        <tr><th>Hosting & Infra</th><td>Ubuntu VPS, Oracle Cloud</td></tr>
+        <tr><th>Extra Features</th><td>Proxy rotation, token auth, ZIP fetchers</td></tr>
+      </tbody>
+    </table>
+  </section>
 
-<div class="page">
-  <h1>Shravi X AyanoKouji</h1>
-  <p>I'll fk them all out</p>
-  <button class="btn" onclick="showMessage('Ever Ever and Forever & I Always Clearing Trash From your way hehehe')">Mommy</button>
-</div>
+  <section>
+    <h2>🎯 Key Projects</h2>
+    <h3>⚔️ WhatsApp Anime Bot</h3>
+    <ul>
+      <li>Powered by <a href="https://github.com/WhiskeySockets/Baileys" target="_blank">@WhiskeySockets/Baileys</a></li>
+      <li>TypeScript with decorators & clean architecture</li>
+      <li>Pokémon starter system with generations 1–9, cute anime emojis, and gender icons</li>
+      <li>Shoob.gg card scraper with tier logic and full image support</li>
+      <li>Anime-style auction system with 5-minute timers</li>
+      <li>Voice note music delivery in <code>.ogg; codecs=opus</code> for WhatsApp</li>
+      <li>Premium unlocks & charming Zero Two-inspired UI</li>
+    </ul>
 
-<script>
-  const pages = document.querySelectorAll(".page");
-  let currentPage = 0;
-  const music = document.getElementById("bgMusic");
+    <h3>🎥 Media APIs & Scrapers</h3>
+    <ul>
+      <li>YouTube downloader with cookies.txt support and JSON output</li>
+      <li>TikTok audio/video fetcher with flag-based options</li>
+      <li>Shoob.gg + WaifuList puppeteer scrapers with proxy rotation</li>
+      <li>Telegram ZIP fetch & token-based download links with auto-deletion</li>
+      <li>Xvideos FastAPI scraper with temporary token-secured downloads</li>
+    </ul>
+  </section>
 
-  function nextPage() {
-    pages[currentPage].classList.remove("active");
-    currentPage = (currentPage + 1) % pages.length;
-    pages[currentPage].classList.add("active");
-    music.play().catch(()=>{});
-  }
+  <section>
+    <h2>🔮 Philosophy</h2>
+    <pre><code>while (alive) {
+  code("with emotion");
+  automate("the boring");
+  style("like an anime OP");
+}</code></pre>
+  </section>
 
-  function showMessage(msg) {
-    alert(msg);
-    music.play().catch(()=>{});
-  }
+  <section id="contact">
+    <h2>📱 Connect with Me</h2>
+    <table class="socials">
+      <tbody>
+        <tr><th>Instagram</th><td><a href="https://instagram.com/kakashu00" target="_blank">@kakashu00</a></td></tr>
+        <tr><th>WhatsApp</th><td><a href="https://wa.me/919389379221" target="_blank">+91 93893 79221</a></td></tr>
+        <tr><th>Telegram</th><td><a href="https://t.me/kakashuuuu" target="_blank">@kakashuuuu</a></td></tr>
+        <tr><th>Portfolio</th><td><a href="https://kakashuuu.github.io/Kakashuuu/" target="_blank">kakashuuu.github.io/Kakashuuu</a></td></tr>
+      </tbody>
+    </table>
+  </section>
 
-  const text = "Mujhe tumse ek baat kehni hai...next dekho";
-  let i = 0;
-  function typeWriter() {
-    if (i < text.length) {
-      document.getElementById("text1").innerHTML += text.charAt(i);
-      i++;
-      setTimeout(typeWriter, 70);
-    }
-  }
-  typeWriter();
+  <section>
+    <h2>🎨 Just for Fun</h2>
+    <img src="https://media.tenor.com/JiJxRMwZMb8AAAAC/zero-two-anime.gif" alt="Zero Two Anime Gif" class="fun-gif" />
+    <p class="fun-quote">
+      “A lesson without pain is meaningless.<br>
+      That’s because you can’t gain something without sacrificing something else.”<br><br>
+      – Edward Elric (Fullmetal Alchemist)
+    </p>
+  </section>
 
-  function createHearts() {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = Math.random() * 15 + 15 + "px";
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 6000);
-  }
-  setInterval(createHearts, 500);
-</script>
+  <footer>
+    Keep coding, keep dreaming, keep living like the final arc is just ahead.
+  </footer>
 
 </body>
 </html>
